@@ -27,7 +27,7 @@
 
 参考`example-min.tex`与`example1.tex`
 
-编译出来效果见`example-min.pdf`与`example1.pdf`
+编译出来效果见[`example-min.pdf`](https://github.com/chenyu76/SZU-CV/releases/download/pdf/example-min.pdf)与[`example1.pdf`](https://github.com/chenyu76/SZU-CV/releases/download/pdf/example1.pdf)
 
 ## 定制指南
 
