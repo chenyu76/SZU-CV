@@ -55,16 +55,9 @@
 }
 
 
-
-% 版面设置
+% 将版面设置为空，使用自定义的页眉页脚
 \RequirePackage{fancyhdr}
-\pagestyle{fancy}
-\lhead{}\chead{}\rhead{}\lfoot{}\cfoot{}
-\rfoot{\thepage}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\headwidth}{\textwidth}
-\renewcommand{\footrulewidth}{0pt}
-
+\pagestyle{empty}
 
 
 %设置页眉页脚文字
@@ -77,6 +70,7 @@
 	\renewcommand{\thefootertext}{#1}
 }
 
+% 多行环境
 \RequirePackage{multicol}
 
 \RequirePackage{atbegshi}   % 包用于在每页添加元素
@@ -102,6 +96,10 @@
 		at ([yshift=0.25in]current page.south) 
 		{\textcolor{secondaryColor}{\footnotesize\textbf{\thefootertext}}};
 
+		\node[anchor=east]  
+		at ([xshift=-0.175in, yshift=0.25in]current page.south east) 
+		{\textcolor{secondaryColor}{\footnotesize\textbf{\thepage}}};
+
 		\node[inner sep=0pt, outer sep=0pt]  at (current page.center) 
 		{\includegraphics[width=0.618\paperwidth]{./figures/logo}};
 	}
@@ -110,6 +108,7 @@
 \AtBeginShipout{\AtBeginShipoutAddToBox{\AddFrame}}
 
 
+% 这是个更好看的C++写法，你直接写C++的话，+号会很大，可以使用\Cpp来代替
 \RequirePackage{relsize}
 \RequirePackage{xspace}
-\newcommand{\Cpp}{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.28ex}{\relsize{-1}++}}\xspace}	% 这是个更好看的C++写法，你直接写C++的话，+号会很大，可以使用\Cpp来代替
+\newcommand{\Cpp}{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.28ex}{\relsize{-1}++}}\xspace}	
